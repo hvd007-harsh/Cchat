@@ -1,0 +1,41 @@
+.JoinPage{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.JoinContainer{
+    border: 2px solid #FFF;
+    height: 50%;
+    row-gap: 30px;
+    width: 50%;
+}
+.input{
+    font-size: large;
+    width: 25vmax;
+    height: 5vmax;
+    border: none;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.btn{
+  font-size: large;
+  background-color: rgb(255, 48, 89);
+  color: black;
+  height: 5vmax;
+  padding: 5px;
+  font-style: bold;
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 25vmax;
+}
+.btn:hover{
+  background-color: rgb(90, 5, 20);
+  color: rgb( 255, 5, 200);
+}

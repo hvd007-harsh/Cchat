@@ -17,20 +17,18 @@ const io = socketIO(server);
 
 io.on("connection",(socket)=>{
     console.log("New Connection");
-    socket.on('joined',({user})=>{
-        users[socket.id]=user;
-        console.log(`${user} has joined`);
-    })
-    socket.emit('welcome',{user: "Admin",message:`Welcome to the chat ${users[socket.id]}`});
-    socket.broadcast.emit("userjoined",{user:"Admin",message:`${users[socket.id]} has joined`});
-    socket.on('leave',(data)=>{
-        console.log(data.user, data.message);
+    socket.on('joined',(data)=>{
+        users[socket.id]=data.user;
+        console.log(`${data.user} has joined`);
+        socket.emit('welcome',{user: "Admin",message:`Welcome to the chat ${users[socket.id]}`});
+        socket.broadcast.emit("userjoined",{user:"Admin",message:`${users[socket.id]} has joined`});
     })
     socket.on('message',({message,id})=>{
-        io.emit('sendMessage',{user:users[id],message})
+        io.emit('sendMessage',{user:users[id],message,id})
     })
-    socket.on('disconnect',()=>{
-        console.log('user left');
+    socket.on('disconnected',()=>{
+          socket.broadcast.emit('leave',{user:"Admin",message:`${users[socket.id]}  has left`});
+        console.log(`user left`);
     })
 });
 server.listen(port, ()=>{

@@ -11,7 +11,8 @@ const Join= ()=>{
     return (
     <div className='JoinPage'>
         <div className='JoinContainer'>
-             <h1>C Chat</h1>
+             <img className="img1" src="https://juststickers.in/wp-content/uploads/2017/10/f-society-original-badge.png" alt="icon" />
+             <h1>fSociety</h1>
              <input name="name" value={name} onChange={(e)=>{setName(e.target.value)}}
               placeholder="Enter the name" 
                className='input' />

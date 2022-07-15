@@ -23,8 +23,29 @@
     display: flex;
 }
 .header{
-    background-color: crimson;
+    background-color: rgb(40, 5, 12);
     height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header>h2{
+    color: white;
+    margin: 2.5vmax;
+}
+img{
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s;
+}
+img:hover{
+    transform: scale(2) rotate(45deg);
+}
+.header img{
+    margin: 2.5vmax;
+    transition: all 0.3s;
+    cursor: pointer;
+
 }
 #chatinput{
     width: 80%;
@@ -35,8 +56,9 @@
 }
 .sendBtn{
   font-size: large;
-  background-color: rgb(255, 48, 89);
-  color: black;
+  background-color: rgb(72, 38, 38);
+  color: white;
+  border: 2px solid white;
   height: 100%;
   font-style: bold;
   transition: all 0.5s;
@@ -48,6 +70,6 @@
     filter: brightness(100) invert();
 }
 .sendBtn:hover{
-    background-color: rgb(90, 5, 20);
-    color: rgb( 255, 5, 200);
+    background-color: rgb(9, 9, 120);
+    color: rgb(91, 91, 91);
 }
